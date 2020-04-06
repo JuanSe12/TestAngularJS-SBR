@@ -1,0 +1,15 @@
+{
+    "welcomeFile": "/webapp/index.html",
+    "authenticationMethod": "none",
+    "routes": [
+        {
+            "path": "/SapBR",
+            "target": {
+                "type": "destination",
+                "name": "SapBR"
+            },
+            "description": "web service de SAP Business Rules"
+        }
+    ],
+    "sendWelcomeFileRedirect": true
+}

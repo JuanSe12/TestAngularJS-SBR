@@ -1,0 +1,58 @@
+<div class="row principal fadeInDown" ng-init="vmForm.init()">
+  <div class="col col-md-8 ajust-content">
+    <div class="panel panel-primary box-panel-info">
+      <div class="panel-heading text-center">Consulta Credito Limite</div>
+      <div class="panel-body">
+        <form class="form-group center-block" style="margin-right: 56%;">
+            <div ng-show="vmForm.loading" class="loaderMaster"></div>
+            <div class="form-group center-block fadeIn first" style="width: 42%;margin-right: 58%;">
+                <label>Nombres de clientes validos</label>
+                <br><br>
+                <select id="creditRating" class="form-control" ng-model="vmForm.creditRating" required
+                    ng-options="item as item.type for item in vmForm.names">
+                    <option selected disabled hidde value="">Seleccione un Nombre</option>
+                </select>
+            </div>
+
+            <div class="form-group center-block fadeIn second" style="width: 42%;margin-right: 0%;margin-top: -16%;">
+                <label>Promedio de salario Empleado</label>
+                <br><br>
+                <input type="number" class="form-control" id="avgOrderValue" name="avgOrderValue"
+                    ng-model="vmForm.avgOrderValue" placeholder="$"
+                    ng-change="vmForm.validateNumbers(vmForm.avgOrderValue)">
+            </div>
+            <div class="fadeIn third">
+                <input type="submit" class="fadeIn fourth" value="Consultar" ng-click="vmForm.consult()">
+            </div>
+
+
+            <div class="fadeIn fourth" style="text-align: center;">
+                <div>
+                    <label>{{vmForm.credit | currency}}</label>
+                </div>
+            </div>
+
+            <div class="fadeIn five">
+                <input type="submit" class="clear" value="Limpiar" ng-click="vmForm.clear()">
+            </div>
+
+            <div>
+                <label>{{vmForm.message}}</label>
+            </div>
+        </form>
+        <ul class="list-inline" style="font-size: 3em !important;">
+            <li class="list-inline-item" style="position: absolute;margin-left: 22%;margin-top: -2%;">
+                <a href="https://github.com/JuanSe12/TestAngularJS-SBR" target="_blank" rel="noopener noreferrer">
+                    <span class="fa-stack fa-lg">
+                        <em class="fa fa-circle fa-stack-2x">
+                        </em>
+                        <em class="fa fa-github fa-stack-1x fa-inverse">
+                        </em>
+                    </span>
+                </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
